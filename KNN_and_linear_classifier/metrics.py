@@ -1,5 +1,5 @@
 def binary_classification_metrics(prediction, ground_truth):
-    '''
+    """
     Computes metrics for binary classification
 
     Arguments:
@@ -8,7 +8,7 @@ def binary_classification_metrics(prediction, ground_truth):
 
     Returns:
     precision, recall, f1, accuracy - classification metrics
-    '''
+    """
     tp = 0
     fp = 0
     tn = 0
@@ -32,7 +32,7 @@ def binary_classification_metrics(prediction, ground_truth):
 
 
 def multiclass_accuracy(prediction, ground_truth):
-    '''
+    """
     Computes metrics for multiclass classification
 
     Arguments:
@@ -41,7 +41,7 @@ def multiclass_accuracy(prediction, ground_truth):
 
     Returns:
     accuracy - ratio of accurate predictions to total samples
-    '''
+    """
     num = ground_truth.shape[0]
     res = 0
     for i in range(num):
