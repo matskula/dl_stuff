@@ -1,4 +1,5 @@
 import numpy as np
+from metrics import multiclass_accuracy
 
 
 def softmax(predictions):
@@ -139,7 +140,7 @@ class LinearSoftmaxClassifier:
                 loss, dW_dL = linear_softmax(X, self.W, y)
                 reg_loss, dW_dR = l2_regularization(self.W, reg)
                 self.W -= learning_rate * (dW_dL + dW_dR)
-            print("Epoch %i, loss: %f" % (epoch, loss))
+            print("Epoch %i, loss: %f, acur: %f" % (epoch, loss, multiclass_accuracy(self.predict(X), y)))
             loss_history.append(loss)
 
         return loss_history
